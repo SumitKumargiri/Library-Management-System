@@ -1,0 +1,53 @@
+<div class="job-list-container" *ngIf="!selectedJob">
+  <div *ngIf="jobs.length > 0; else noData" class="card-container">
+    <div class="card" *ngFor="let job of jobs">
+      <img class="card-image" [src]="job.image || 'assets/default-job.png'" alt="Job Image" />
+      <div class="card-details">
+        <h3>Role: {{ job.role }}</h3>
+        <p>Company Name: {{ job.company_name }}</p>
+        <p>Location: {{ job.location }}</p>
+        <p>Package: {{ job.package }}</p>
+        <p>Mode: {{ job.mode }}</p>
+        <p><strong>Skills:</strong> {{ job.skill }}</p>
+        <button class="see-all-button" (click)="viewJobDetails(job)">See All</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <p>No job data available.</p>
+  </ng-template>
+</div>
+
+
+
+<div class="job-details-container" *ngIf="selectedJob">
+  <button class="back-button" (click)="backToList()">Back</button>
+  <h2>{{ selectedJob.role }}</h2>
+  <div class="job-details-grid">
+    <div class="job-detail-item">
+      <strong>Company:</strong> {{ selectedJob.company_name }}
+    </div>
+    <div class="job-detail-item">
+      <strong>Location:</strong> {{ selectedJob.location }}
+    </div>
+    <div class="job-detail-item">
+      <strong>Package:</strong> {{ selectedJob.package }}
+    </div>
+    <div class="job-detail-item">
+      <strong>Mode:</strong> {{ selectedJob.mode }}
+    </div>
+    <div class="job-detail-item">
+      <strong>Skills:</strong> {{ selectedJob.skill }}
+    </div>
+    <div class="job-detail-item">
+      <strong>Number of Hiring:</strong> {{ selectedJob.noofhiring }}
+    </div>
+  </div>
+  <div class="job-details-description">
+    <strong>Description:</strong> {{ selectedJob.description }}
+  </div>
+  <button (click)="applyForJob(selectedJob.role)" class="btnapply">Apply</button>
+</div>
+
+

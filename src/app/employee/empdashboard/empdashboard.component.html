@@ -1,0 +1,14 @@
+
+<div *ngIf="chartSettings">
+    <jqxChart [width]="'850px'" [height]="'500px'" [source]="chartSettings.source" 
+      [title]="chartSettings.title" [description]="chartSettings.description" 
+      [showLegend]="chartSettings.showLegend" [padding]="chartSettings.padding" 
+      [titlePadding]="chartSettings.titlePadding" [xAxis]="chartSettings.xAxis" 
+      [valueAxis]="chartSettings.valueAxis" [seriesGroups]="chartSettings.seriesGroups">
+    </jqxChart>
+  </div>
+  
+  <div *ngIf="!chartSettings">
+    Loading chart data...
+  </div>
+  

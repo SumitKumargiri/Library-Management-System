@@ -1,0 +1,32 @@
+<nav class="navbar">
+    <div class="logo">ProCareer</div>
+    <ul class="nav-links">
+      <li><a routerLink="/">Jobs</a></li>
+      <li><a routerLink="/about">Companies</a></li>
+      <li><a routerLink="/services">Services</a></li>
+    </ul>
+
+
+    <div class="nav-links-button d-flex m-2">
+      <button type="button" class="btn btn-danger bg-danger p-2 me-2 ps-4 pe-4" (click)="togglePopup()">Login</button>
+      <button type="button" class="btn btn-warning p-2 ps-4 pe-4" (click)="openPopuplr('register')">Register</button>
+    </div>
+    
+    <div *ngIf="isLoginPopupVisible" class="dropdown-menu show">
+      <button class="dropdown-item" (click)="navigateToPage('employeelogin')"><i class="bi bi-people"></i>Employee</button>
+      <button class="dropdown-item" (click)="navigateToPage('jobseekerlogin')"><i class="bi bi-person"></i>Jobseeker</button>
+    </div>
+    
+    <div *ngIf="isRegisterPopupVisible" class="dropdown-menu show">
+      <button class="dropdown-item" (click)="navigateToPage('employeeregister')"><i class="bi bi-people"></i>Employee</button>
+      <button class="dropdown-item" (click)="navigateToPage('jobseekerregister')"><i class="bi bi-person"></i>Jobseeker</button>
+    </div>
+         
+    <div class="menu-icon" (click)="toggleMenu()">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </div>
+  </nav>
+  
+  

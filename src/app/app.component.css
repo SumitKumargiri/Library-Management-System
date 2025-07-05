@@ -1,0 +1,25 @@
+.custom-card {
+    background-color: #fff; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 16px; /* Padding inside the card */
+    width: 100%; /* Full width */
+    max-width: 24rem; /* Max width of the card */
+  }
+  
+  .text-xl {
+    font-size: 1.25rem; /* Large text size */
+    font-weight: 600; /* Semi-bold text */
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .justify-center {
+    justify-content: center; /* Horizontally centers the card */
+  }
+  

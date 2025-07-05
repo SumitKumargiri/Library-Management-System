@@ -1,0 +1,38 @@
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form (submit)="onLogin(); $event.preventDefault()">
+      
+      <div class="form-group custom-select-wrapper">
+        <label for="loginMethod">Login With:</label>
+        <div class="custom-select-container">
+          <select id="loginMethod" [(ngModel)]="loginMethod" name="loginMethod" class="form-control">
+            <option value="username">Username</option>
+            <option value="email">Email</option>
+          </select>
+          <i class="bi bi-chevron-down dropdown-icon"></i>
+        </div>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="usernameOrEmail">{{ loginMethod === 'username' ? 'username' : 'email' }}</label>
+        <input id="usernameOrEmail" type="text" [(ngModel)]="usernameOrEmail" name="usernameOrEmail" class="form-control"
+          placeholder="Enter your {{ loginMethod === 'username' ? 'username' : 'email' }}"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" [(ngModel)]="password" name="password" class="form-control"           placeholder="Enter your password"/>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  
+    <div class="flex justify-center mt-4">
+      <div class="custom-card w-96 p-4">
+        <asl-google-signin-button type="standard" size="medium"></asl-google-signin-button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,334 @@
+
+<div class="job-search-container">
+    <h1>Find your dream job now</h1>
+    <p>10 lakh+ jobs for you to explore</p>
+    
+    <div class="search-bar">
+       <i class="bi bi-search"></i>
+      <input type="text" placeholder="Enter skills / designations / companies">
+      <select>
+        <option>Select experience</option>
+        <option value="fresher">Fresher</option>
+        <option value="1-3 years">1-3 years</option>
+        <option value="3-5 years">3-5 years</option>
+        <option value="5+ years">5+ years</option>
+      </select>
+      <input type="text" placeholder="Enter location">
+      <button>Search</button>
+    </div>
+  
+    <div class="filters">
+      <button>part time remote</button>
+      <button>part time</button>
+    </div>
+  </div>
+
+  <!-- ++++++++++++ second part ++++++++++++++++ -->
+
+  <div class="container mt-5">
+    <div class="resume-banner d-flex align-items-center p-4 rounded">
+      <div class="resume-content text-white">
+        <h2>Need help with your resume?</h2>
+        <p>Get experts to build your resume from scratch</p>
+        <button class="btn btn-primary mt-3">View details</button>
+      </div>
+      <div class="resume-image ml-auto">
+        <img src="../../../assets/procareer-removebg-preview.png" alt="procareer" class="img-fluid">
+      </div>
+    </div>
+  
+    <div class="category-buttons mt-4">
+      <div class="row">
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-house-door"></i> Remote<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-buildings"></i> MNC<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-rocket"></i> Startup<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-briefcase"></i> Internship<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-trophy"></i> Fortune 500<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-3"><i class="bi bi-currency-rupee"></i> Banking & Financy<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3 ms-5">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-bag"></i> Sales<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-graph-up-arrow"></i> Marketing<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-3"><i class="bi bi-code-slash"></i> Software & Tech<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-bar-chart"></i> Analytics<i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="col-md-2 col-6 mb-3">
+          <button class="btn category-btn w-100 p-4"><i class="bi bi-mortarboard"></i> Fresher<i class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- ++++++++++++++++ third part ++++++++++++++++++++++++++ -->
+
+  <div class="container mt-5">
+    <!-- Top Companies Hiring Now Section -->
+    <h2 class="mb-4">Top Companies Hiring Now</h2>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let category of topCompanies">
+        <div class="card text-center p-3 shadow-sm">
+          <h5>{{ category.name }}</h5>
+          <p class="text-muted">{{ category.info }}</p>
+          <div class="d-flex justify-content-center gap-2 mt-2">
+            <img
+              *ngFor="let logo of category.logos"
+              [src]="logo"
+              alt="Company Logo"
+              class="company-logo"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Featured Companies Actively Hiring Section -->
+    <h2 class="mt-5 mb-4">Featured Companies Actively Hiring</h2>
+    <div class="d-flex gap-3 mb-3">
+      <button
+        *ngFor="let filter of filters"
+        class="btn btn-outline-primary"
+        (click)="filterCompanies(filter)"
+      >
+        {{ filter }}
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let company of featuredCompanies">
+        <div class="card p-3 shadow-sm">
+          <img
+            [src]="company.logo"
+            alt="Company Logo"
+            class="company-logo mb-3 mx-auto"
+          />
+          <h5 class="text-center">{{ company.name }}</h5>
+          <p class="text-muted text-center">
+            <i class="bi bi-star-fill text-warning"></i> {{ company.rating }} |
+            {{ company.reviews }}+ reviews
+          </p>
+          <p class="text-center">{{ company.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <!-- +++++++++++++++++++ fourth part ++++++++++++++++++++++++++++++++++++ -->
+
+  <div class="container my-5">
+
+    <div class="row align-items-center p-4 shadow-sm rounded bg-light">
+      <div class="col-md-2 text-center">
+        <img src="assets/naukri-campus-logo.png" alt="Campus Logo" class="img-fluid rounded-circle">
+      </div>
+      <div class="col-md-8">
+        <h4 class="fw-bold">Introducing a career platform for college students & fresh grads</h4>
+        <p class="text-muted">
+          Explore contests, webinars, take aptitude tests, prepare for your dream career & find jobs & internships.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#" class="btn btn-outline-primary">Expert Speak</a>
+          <a href="#" class="btn btn-outline-primary">Contests</a>
+          <a href="#" class="btn btn-outline-primary">NCAT</a>
+          <a href="#" class="btn btn-outline-primary">Pathfinder</a>
+          <a href="#" class="btn btn-outline-primary">Jobs & Internships</a>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <button class="btn btn-primary px-4 py-2">Explore now</button>
+      </div>
+    </div>
+  
+    <!-- Diversity & Inclusion Section -->
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="assets/diverse-team.jpg"
+            alt="Diverse Team"
+            class="card-img-top"
+            style="height: 100%; object-fit: cover;"
+          />
+          <div class="card-body text-white bg-dark">
+            <h5 class="card-title">Tietoevry <span class="text-warning">★ 4.3</span></h5>
+            <p class="card-text">Embracing the power of diverse minds.</p>
+            <a href="#" class="btn btn-link text-white">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 bg-light text-center">
+              <p class="mb-0 fw-bold">Equal access to opportunities and resources for all.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 bg-light text-center">
+              <p class="mb-0 fw-bold">Respecting differences and valuing diverse perspectives.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 bg-light text-center">
+              <p class="mb-0 fw-bold">Fostering belongingness, growth, and empowerment for employees.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3 bg-light text-center">
+              <p class="mb-0 fw-bold">Creating an inclusive environment for all talents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- ++++++++++++++++++++++++ fifth part ++++++++++++++++++++++++ -->
+
+<div class="container my-5">
+  <div class="row align-items-center p-4 shadow rounded bg-light custom-container">
+
+    <div class="col-md-6 text-center">
+      <img
+        src="https://static.naukimg.com/s/0/0/i/role-collection-ot.png"
+        alt="Job Illustration"
+        class="img-fluid mb-3 custom-image"
+      />
+      <h3 class="fw-bold custom-heading">Discover jobs across popular roles</h3>
+      <p class="text-muted custom-text">Select a role and we'll show you relevant jobs for it!</p>
+    </div>
+
+
+    <div class="col-md-6">
+      <div id="jobCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Automation Test Engineer</h6>
+                  <p class="text-muted mb-0">2.4K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Cyber Security</h6>
+                  <p class="text-muted mb-0">547 Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Technical Architect</h6>
+                  <p class="text-muted mb-0">5.2K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Business Analyst</h6>
+                  <p class="text-muted mb-0">4.3K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Data Scientist</h6>
+                  <p class="text-muted mb-0">1K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Program Manager</h6>
+                  <p class="text-muted mb-0">490 Jobs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">DevOps Engineer</h6>
+                  <p class="text-muted mb-0">1.2K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Frontend Developer</h6>
+                  <p class="text-muted mb-0">3.1K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Backend Developer</h6>
+                  <p class="text-muted mb-0">2.8K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Product Manager</h6>
+                  <p class="text-muted mb-0">1.7K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">UX Designer</h6>
+                  <p class="text-muted mb-0">2.0K+ Jobs</p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="card shadow-sm p-3 custom-card">
+                  <h6 class="fw-bold">Data Analyst</h6>
+                  <p class="text-muted mb-0">1.3K+ Jobs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#jobCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#jobCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

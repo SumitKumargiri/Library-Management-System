@@ -1,0 +1,43 @@
+<div class="job-data job-container container">
+  <div *ngFor="let job of jobData" class="jobcard row border shadow-sm rounded mb-5">
+
+    <div class="job-card-header d-flex flex-row">
+      <div class="job-image me-3">
+        <img *ngIf="job.image" [src]="job.image" alt="Job Image" class="job-image-preview img-fluid rounded shadow-lg" />
+      </div>
+      <div class="job-title flex-grow-1">
+        <h3>{{ job.role }}</h3>
+        <p>{{ job.company_name }}</p>
+      </div>
+    </div>
+
+    
+    <div class="job-card-body">
+      <div class="row">
+        <div class="col-md-3">
+          <p><strong>Package:</strong> {{ job.package }}</p>
+        </div>
+        <div class="col-md-3">
+          <p><strong>Location:</strong> {{ job.location }}</p>
+        </div>
+        <div class="col-md-3">
+          <p class="text-center"><strong>Mode:</strong> {{ job.mode }}</p>
+        </div>
+        <div class="col-md-3">
+          <p><strong>Number of Hiring:</strong> {{ job.noofhiring }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-description">
+      <p><strong>Description:</strong> {{ job.description }}</p>
+    </div>
+
+    <hr>
+
+    <div class="keywords">
+      <span>Keywords:</span>
+      <span class="badge bg-primary" >{{ job.skill }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.loading-spinner {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+}
+
+.jobs-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 120px;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 300px;
+}
+
+.job-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.job-details h3 {
+  margin: 0;
+  color: #333;
+}
+
+.job-details p {
+  margin: 5px 0;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}

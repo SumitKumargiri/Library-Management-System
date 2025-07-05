@@ -1,0 +1,24 @@
+<div *ngIf="loading" class="loading-spinner">Loading...</div>
+
+<div *ngIf="!loading && errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="!loading && jobs.length > 0" class="jobs-list">
+  <div class="job-card" *ngFor="let job of jobs">
+    <img *ngIf="job.image" [src]="job.image" alt="{{ job.role }}" class="job-image" />
+    <div class="job-details">
+      <h3>{{ job.role }}</h3>
+      <p><strong>Company:</strong> {{ job.company_name }}</p>
+      <p><strong>Location:</strong> {{ job.location }}</p>
+      <p><strong>Package:</strong> {{ job.package }}</p>
+      <p><strong>Mode:</strong> {{ job.mode }}</p>
+      <p><strong>Skills:</strong> {{ job.skill }}</p>
+      <!-- <p><strong>No. of Hiring:</strong> {{ job.noofhiring }}</p> -->
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading && jobs.length === 0" class="no-data">
+  No applied jobs found.
+</div>

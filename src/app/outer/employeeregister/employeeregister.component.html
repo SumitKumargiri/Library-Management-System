@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="registration-form">
+    <div class="form-container">
+      <h2 class="form-title">Employee Registration</h2>
+  
+      <div class="form-group">
+        <label for="firstname" class="form-label">First Name:</label>
+        <input type="text" id="firstname" name="firstname" [(ngModel)]="registrationData.firstname" required class="form-input" />
+      </div>
+  
+      <div class="form-group">
+        <label for="lastname" class="form-label">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" [(ngModel)]="registrationData.lastname" required class="form-input" />
+      </div>
+  
+      <div class="form-group">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="registrationData.username" required class="form-input" />
+      </div>
+  
+      <div class="form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="registrationData.email" required class="form-input" />
+      </div>
+  
+      <div class="form-group">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="registrationData.password" required class="form-input" />
+      </div>
+  
+      <div class="form-group">
+        <label for="mobilenumber" class="form-label">Mobile Number:</label>
+        <input type="number" id="mobilenumber" name="mobilenumber" [(ngModel)]="registrationData.mobilenumber" required class="form-input" />
+      </div>
+  
+      <button type="submit" class="submit-btn" [disabled]="!registerForm.form.valid">Register</button>
+    </div>
+  </form>
+  

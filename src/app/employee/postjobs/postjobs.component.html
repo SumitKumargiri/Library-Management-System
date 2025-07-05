@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="card shadow-lg">
+    <div class="card-header text-white">
+      <h2 class="text-center mb-0">Job Form</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="role" class="form-label">Role</label>
+              <input id="role" [(ngModel)]="jobData.role" name="role" type="text" class="form-control" placeholder="Enter role" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="company_name" class="form-label">Company Name</label>
+              <input id="company_name" [(ngModel)]="jobData.company_name" name="description" type="text" class="form-control" placeholder="Enter description" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="location" class="form-label">Location</label>
+              <input id="location" [(ngModel)]="jobData.location" name="location" type="text" class="form-control"
+                placeholder="Enter location" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="package" class="form-label">Package</label>
+              <input id="package" [(ngModel)]="jobData.package" name="package" type="text" class="form-control"
+                placeholder="Enter package" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="mode" class="form-label">Mode</label>
+              <input id="mode" [(ngModel)]="jobData.mode" name="mode" type="text" class="form-control" placeholder="Enter mode" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="skill" class="form-label">Skill</label>
+              <input id="skill" [(ngModel)]="jobData.skill" name="skill" type="text" class="form-control" placeholder="Enter skill" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="noofhiring" class="form-label">Number of Hiring</label>
+              <input id="noofhiring" [(ngModel)]="jobData.noofhiring" name="noofhiring" type="number" class="form-control"
+                placeholder="Enter number of hiring" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group mb-3">
+              <label for="image" class="form-label">Image</label>
+              <input id="image" type="file" (change)="onImageSelected($event)" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input id="description" [(ngModel)]="jobData.description" name="description" type="text" class="form-control" placeholder="Enter description" />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          <button type="cancel" class="btn btn-danger" routerLink="">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
