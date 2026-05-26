@@ -1,9 +1,9 @@
 # 📚 Library Management System
 <p align="center">
-  <a href="https://your-live-link.com">
+  <a href="https://sumitkumargiri.github.io/Library-Management-System/">
     <img src="https://img.shields.io/badge/Live-Demo-green?style=for-the-badge" />
   </a>
-  <a href="https://github.com/SumitKumargiri/Library-Management-System">
+  <a href="https://sumitkumargiri.github.io/Library-Management-System/">
     <img src="https://img.shields.io/badge/Repo-GitHub-black?style=for-the-badge" />
   </a>
 </p>
