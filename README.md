@@ -1,4 +1,7 @@
 # 📚 Library Management System
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://your-live-link.com)
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/SumitKumargiri/Library-Management-System)
 
 A modern Library Management System built using Angular, TypeScript, and Tailwind CSS.  
 This project helps manage books, users, and library operations with a clean, responsive UI and scalable architecture.
